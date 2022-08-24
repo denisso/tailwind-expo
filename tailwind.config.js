@@ -1,7 +1,8 @@
+const colplugin = require("./plugintailwind/colplugin")
 module.exports = {
-    content: ['./*.html'],
+    content: ["./*.html"],
     theme: {
-      extend: {},
+        extend: {},
     },
-    plugins: [],
-  }
+    plugins: [colplugin],
+};
