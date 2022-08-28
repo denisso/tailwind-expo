@@ -4,21 +4,68 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            .box {
+                --width: 80vw;
+                --gap: 20px;
+                --collapsed: calc(var(--width) / 6 - var(--gap) * 2);
+                --active: calc(var(--width) - var(--width) / 3 - var(--gap));
+            }
+            .item.active {
+                flex-basis: var(--active);
+            }
+            .img {
+                width: var(--active);
+                object-fit: cover;
+                object-position: center;
+                transition: transform 1s;
+            }
+
+            .item.active .img {
+                transform: translateX(0);
+            }
+        </style>
         <title>TailwindCSS Boilerplate</title>
     </head>
     <body class="">
-        <div class="box flex mx-auto [--width: 80vw]">
-            <div class="item active">
-                <img src="https://picsum.photos/id/1/600/300 " alt="" class="img">
+        <div
+            class="box flex mx-auto w-[var(--width)] gap-[var(--gap)] h-[calc(var(--width) / 3)]"
+        >
+            <div
+                class="item active basis-[var(--collapsed)] overflow-hidden transition-[flex-basis_1s] rounded-[2rem] flex-grow-[1] cursor-pointer"
+            >
+                <img
+                    src="https://picsum.photos/id/1/600/300 "
+                    alt=""
+                    class="img block h-[100%]"
+                />
             </div>
-            <div class="item">
-                <img src="https://picsum.photos/id/2/600/300 " alt="" class="img">
+            <div
+                class="item basis-[var(--collapsed)] overflow-hidden transition-[flex-basis_1s] rounded-[2rem] flex-grow-[1] cursor-pointer"
+            >
+                <img
+                    src="https://picsum.photos/id/2/600/300 "
+                    alt=""
+                    class="img block h-[100%]"
+                />
             </div>
-            <div class="item">
-                <img src="https://picsum.photos/id/3/600/300 " alt="" class="img">
+            <div
+                class="item basis-[var(--collapsed)] overflow-hidden transition-[flex-basis_1s] rounded-[2rem] flex-grow-[1] cursor-pointer"
+            >
+                <img
+                    src="https://picsum.photos/id/3/600/300 "
+                    alt=""
+                    class="img block h-[100%]"
+                />
             </div>
-            <div class="item">
-                <img src="https://picsum.photos/id/4/600/300 " alt="" class="img">
+            <div
+                class="item basis-[var(--collapsed)] overflow-hidden transition-[flex-basis_1s] rounded-[2rem] flex-grow-[1] cursor-pointer"
+            >
+                <img
+                    src="https://picsum.photos/id/4/600/300 "
+                    alt=""
+                    class="img block h-[100%]"
+                />
             </div>
         </div>
         <script type="module" src="/assets/js/main.js"></script>
